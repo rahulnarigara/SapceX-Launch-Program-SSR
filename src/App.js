@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Space from './Space';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const [posts, setPosts] = useState([]);
+	const [loading, setLoading] = useState(false);
 
+	useEffect(() => {
+		const fetchPosts = async () => {
+			setLoading(true);
+			const res = await axios.get(
+				'https://api.spacexdata.com/v3/launches?limit=8'
+			);
+			setPosts(res.data);
+			setLoading(false);
+		};
+		fetchPosts();
+	}, []);
+
+	const handleBtn = e => {};
+
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
+	return (
+		<>
+			<Space data={posts} handleBtn={handleBtn} />
+		</>
+	);
+};
 export default App;
