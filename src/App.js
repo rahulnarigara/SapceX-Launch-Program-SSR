@@ -10,7 +10,7 @@ const App = () => {
 		const fetchPosts = async () => {
 			setLoading(true);
 			const res = await axios.get(
-				'https://api.spacexdata.com/v3/launches?limit=8'
+				'https://api.spacexdata.com/v3/launches?limit=20'
 			);
 			setPosts(res.data);
 			setLoading(false);
@@ -18,7 +18,15 @@ const App = () => {
 		fetchPosts();
 	}, []);
 
-	const handleBtn = e => {};
+	const handleBtn = e => {
+		const fetchPosts = async () => {
+			const res = await axios.get(
+				'https://api.spacexdata.com/v3/launches?limit=8&amp;launch_success=true&amp;land_success=true&amp;launch_year=2014'
+			);
+			setPosts(res.data);
+		};
+		fetchPosts();
+	};
 
 	if (loading) {
 		return <div>Loading...</div>;

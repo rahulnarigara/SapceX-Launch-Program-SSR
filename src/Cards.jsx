@@ -15,7 +15,7 @@ const Cards = props => {
 					src='https://e7.pngegg.com/pngimages/626/515/png-clipart-international-space-station-spacex-dragon-falcon-9-outer-space-web-browser-spacex-crs14-label-logo.png'
 				/>
 				<Card.Body>
-					<Card.Title className='text-truncate text-primary'>
+					<Card.Title className='text-truncate text-primary text-left'>
 						{props.mission_name} #{props.flight_no}
 					</Card.Title>
 

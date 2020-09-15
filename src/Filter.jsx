@@ -7,7 +7,7 @@ const Filter = props => {
 		<>
 			<Card
 				style={{ width: '15rem' }}
-				className='my-1 mx-1 ml-3 align-item-center bg-light position-static d-flex align-items-center float-left'>
+				className='my-1 mx-1 ml-3 align-item-center bg-light position-static d-flex align-items-center float-left clearfix'>
 				<Card.Img />
 				<Card.Body className='text-center'>
 					<Card.Title className='text-truncate text-primary '></Card.Title>
@@ -50,7 +50,7 @@ const Filter = props => {
 					</Button>
 					<Button
 						className='bg-success mx-3 my-1'
-						value='2014'
+						value='launch_year'
 						onClick={props.handleBtn}>
 						2014
 					</Button>
