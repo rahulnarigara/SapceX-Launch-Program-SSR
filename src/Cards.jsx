@@ -8,7 +8,7 @@ const Cards = props => {
 		<>
 			<Card
 				style={{ width: '15rem' }}
-				className='float-left my-1 mx-1 ml-3 bg-light h-25 d-flex align-items-center'>
+				className='float-left my-1 mx-1 ml-3 bg-light h-25 d-flex align-items-center col-lg-3 col-md-4 col-sm-12'>
 				<Card.Img
 					className='image-fluid w-75 align-self-center mt-2'
 					variant='top'
